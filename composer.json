@@ -1,0 +1,18 @@
+{
+    "name": "extensions-store/paymentbasecurrency",
+    "license": "GPL-3.0",
+    "type": "magento-module",
+    "description": "Accept Authorize.net and Amazon Payments if your store's base currency is not USD and you don't have an office in the currency's native country.",
+    "homepage": "https://www.extensions-store.com/payment-base-currency",
+    "require": {
+        "php": ">=5.3",
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "authors": [
+        {
+            "name": "Extensions Store",
+            "email": "Extensions Store <admin@extensions-store.com>",
+            "role": "Author/Maintainer"
+        }
+    ]
+}

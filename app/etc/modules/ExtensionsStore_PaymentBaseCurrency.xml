@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * 
+ * @category   ExtensionsStore
+ * @package    ExtensionsStore_PaymentBaseCurrency
+ * @author     Extensions Store <admin@extensions-store.com>
+ */
+-->
+<config>
+    <modules>
+        <ExtensionsStore_PaymentBaseCurrency>
+            <active>true</active>
+            <codePool>community</codePool>
+        </ExtensionsStore_PaymentBaseCurrency>       
+    </modules>
+</config>

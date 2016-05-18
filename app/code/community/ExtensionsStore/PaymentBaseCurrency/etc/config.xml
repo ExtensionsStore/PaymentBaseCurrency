@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!-- 
+/**
+ * 
+ *
+ * @category   ExtensionsStore
+ * @package    ExtensionsStore_PaymentBaseCurrency
+ * @author     Extensions Store <admin@extensions-store.com>
+ */
+-->
+<config>
+	<modules>
+		<ExtensionsStore_PaymentBaseCurrency>
+			<version>1.0.0</version>
+		</ExtensionsStore_PaymentBaseCurrency>
+	</modules>
+	<global>
+		<events>
+			<sales_order_place_before>
+				<observers>
+					<paymentbasecurrency>
+						<class>paymentbasecurrency/observer</class>
+						<method>changeOrderCurrency</method>
+					</paymentbasecurrency>
+				</observers>
+			</sales_order_place_before>
+			<sales_order_place_after>
+				<observers>
+					<paymentbasecurrency>
+						<class>paymentbasecurrency/observer</class>
+						<method>restoreBaseCurrency</method>
+					</paymentbasecurrency>
+				</observers>
+			</sales_order_place_after>
+		</events>
+		<blocks>
+			<paymentbasecurrency>
+				<class>ExtensionsStore_PaymentBaseCurrency_Block</class>
+			</paymentbasecurrency>
+			<paygate>
+				<rewrite>
+					<authorizenet_info_cc>ExtensionsStore_PaymentBaseCurrency_Block_Paygate_Authorizenet_Info_Cc
+					</authorizenet_info_cc>
+				</rewrite>
+			</paygate>
+		</blocks>
+		<helpers>
+			<paymentbasecurrency>
+				<class>ExtensionsStore_PaymentBaseCurrency_Helper</class>
+			</paymentbasecurrency>
+		</helpers>
+		<models>
+			<paymentbasecurrency>
+				<class>ExtensionsStore_PaymentBaseCurrency_Model</class>
+			</paymentbasecurrency>
+		</models>
+	</global>
+	<default>
+		<payment>
+			<authorizenet>
+				<convert_usd>1</convert_usd>
+			</authorizenet>
+			<authorizenet_directpost>
+				<convert_usd>1</convert_usd>
+			</authorizenet_directpost>
+			<amazon_payments>
+				<convert_usd>1</convert_usd>
+			</amazon_payments>
+		</payment>
+	</default>
+</config>
